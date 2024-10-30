@@ -16,6 +16,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<SQLServerConfig>(builder.Configuration.GetSection("DBTestConnection"));
 //****************** DAOS  ****************************
 builder.Services.AddScoped<IAuthDAO, AuthDAO>();
+builder.Services.AddScoped<IRoleDAO, RoleDAO>();
 
 //******** end depencies and options **************************************
 

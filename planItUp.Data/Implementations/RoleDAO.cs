@@ -1,11 +1,12 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Options;
 using PlanItUp.Configuration;
+using PlanItUp.Data.Interfaces;
 using System.Data.SqlClient;
 
 namespace PlanItUp.Data.Implementations
 {
-    public class RoleDAO
+    public class RoleDAO : IRoleDAO
     {
         private SQLServerConfig _SQLServerConfig;
 
