@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PlanItUp.Common\PlanItUp.Common.csproj" />
     <ProjectReference Include="..\planItUp.Data\PlanItUp.Data.csproj" />
   </ItemGroup>
 

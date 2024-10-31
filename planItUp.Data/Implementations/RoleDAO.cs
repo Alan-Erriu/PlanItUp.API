@@ -19,7 +19,7 @@ namespace PlanItUp.Data.Implementations
 
 
 
-        public async Task<int> GetIdRoleByName(string name)
+        public async Task<int?> GetIdRoleByName(string name)
         {
 
 

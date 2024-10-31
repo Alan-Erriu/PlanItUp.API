@@ -9,7 +9,7 @@
         public string email { get; set; }
         public string phone_number { get; set; }
         public bool status { get; set; }
-        public int role_id { get; set; }
+        public int? role_id { get; set; }
 
     }
 }

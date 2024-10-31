@@ -2,6 +2,6 @@
 {
     public interface IRoleDAO
     {
-        Task<int> GetIdRoleByName(string name);
+        Task<int?> GetIdRoleByName(string name);
     }
 }

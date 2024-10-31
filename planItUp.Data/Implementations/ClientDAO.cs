@@ -1,13 +1,15 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Options;
+using PlanItUp.Configuration;
+using PlanItUp.Data.Interfaces;
 using System.Data.SqlClient;
 
 namespace PlanItUp.Data.Implementations
 {
-    public class ClientDAO
+    public class ClientDAO : IClientDAO
     {
-        private SqlConnection _connection;
-        public ClientDAO(IOptions<SqlConnection> sqlConnection)
+        private SQLServerConfig _connection;
+        public ClientDAO(IOptions<SQLServerConfig> sqlConnection)
         {
             _connection = sqlConnection.Value;
         }
