@@ -25,6 +25,15 @@ namespace PlanItUp.API.Controllers
             return Ok("Succes");
 
         }
+        [HttpPost("signin")]
+
+        public async Task<IActionResult> SignIn([FromBody] LoginRequest loginRequest)
+        {
+
+            var result = await _authService.SignIn(loginRequest);
+            return Ok(result.client_id);
+
+        }
 
     }
 }

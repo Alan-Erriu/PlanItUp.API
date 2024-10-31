@@ -42,7 +42,11 @@ namespace PlanItUp.Services.Implementations
 
         public async Task<LoginDTO> SignIn(LoginRequest loginRequest)
         {
-
+            var client = await _authDAO.SignIn(loginRequest);
+            if (client == null) throw new NotFoundException("User Not Found");
+            if (!_hasherService.VerifyPassword(loginRequest.password, client.password_hash)) throw new UnauthorizedException("Incorrect password");
+            if (!client.status) throw new UnauthorizedException("The user is disabled");
+            return client;
         }
     }
 }

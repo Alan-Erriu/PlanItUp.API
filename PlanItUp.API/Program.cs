@@ -1,4 +1,3 @@
-using PlanItUp.API.Middlewares;
 using PlanItUp.Configuration;
 using PlanItUp.Data.Implementations;
 using PlanItUp.Data.Interfaces;
@@ -20,6 +19,7 @@ builder.Services.Configure<SQLServerConfig>(builder.Configuration.GetSection("DB
 builder.Services.AddScoped<IAuthDAO, AuthDAO>();
 builder.Services.AddScoped<IRoleDAO, RoleDAO>();
 builder.Services.AddScoped<IClientDAO, ClientDAO>();
+builder.Services.AddScoped<IRoomDAO, RoomDAO>();
 //****************** Services *************************
 builder.Services.AddScoped<IHasherService, BcryptHasher>();
 builder.Services.AddScoped<IAuthService, AuthService>();
@@ -45,8 +45,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-app.UseMiddleware<GlobalErrorHandlingMiddleware>();
+// recomendado desactivar para hacer pruebas
+//app.UseMiddleware<GlobalErrorHandlingMiddleware>();
 
 app.MapControllers();
 
